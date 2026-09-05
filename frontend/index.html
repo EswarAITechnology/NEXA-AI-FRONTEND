@@ -1,1 +1,320 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#05070c">
+  <meta name="description" content="NEXA AI futuristic system interface">
+  <title>NEXA AI — System Interface</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="background-grid"></div>
+  <div class="scanlines"></div>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-orb"></div>
+      <div>
+        <div class="brand-name">NEXA</div>
+        <div class="brand-subtitle">NEURAL SYSTEM INTERFACE</div>
+      </div>
+    </div>
+
+    <div class="system-status">
+      <span class="status-dot"></span>
+      <span>SYSTEM ONLINE</span>
+    </div>
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- MAIN -->
+  <main class="dashboard">
+
+    <!-- LEFT PANEL -->
+    <aside class="panel left-panel">
+
+      <div class="panel-title">
+        <span>SYSTEM MONITOR</span>
+        <span class="panel-indicator"></span>
+      </div>
+
+      <div class="metric">
+        <div class="metric-head">
+          <span>CPU</span>
+          <strong id="cpuValue">24%</strong>
+        </div>
+        <div class="progress">
+          <div class="progress-fill" id="cpuBar"></div>
+        </div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-head">
+          <span>GPU</span>
+          <strong id="gpuValue">38%</strong>
+        </div>
+        <div class="progress">
+          <div class="progress-fill" id="gpuBar"></div>
+        </div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-head">
+          <span>MEMORY</span>
+          <strong id="ramValue">61%</strong>
+        </div>
+        <div class="progress">
+          <div class="progress-fill" id="ramBar"></div>
+        </div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-head">
+          <span>DISK</span>
+          <strong id="diskValue">42%</strong>
+        </div>
+        <div class="progress">
+          <div class="progress-fill" id="diskBar"></div>
+        </div>
+      </div>
+
+      <div class="network-box">
+        <div class="small-label">NETWORK</div>
+        <div class="network-value">
+          <span>↑</span> 1.24 MB/s
+        </div>
+        <div class="network-value">
+          <span>↓</span> 4.82 MB/s
+        </div>
+      </div>
+
+      <div class="battery-box">
+        <div class="small-label">POWER</div>
+        <div class="battery">
+          <div class="battery-level" id="batteryLevel"></div>
+        </div>
+        <span id="batteryText">87%</span>
+      </div>
+
+    </aside>
+
+    <!-- CENTER -->
+    <section class="core-area">
+
+      <div class="core-header">
+        <div class="eyebrow">NEXA CORE INTERFACE</div>
+        <h1>ARC REACTOR</h1>
+        <div class="core-state" id="coreState">STABLE</div>
+      </div>
+
+      <div class="reactor-container" id="reactor">
+
+        <div class="reactor-glow"></div>
+
+        <div class="ring ring-one"></div>
+        <div class="ring ring-two"></div>
+        <div class="ring ring-three"></div>
+        <div class="ring ring-four"></div>
+
+        <div class="energy-lines">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="reactor-core">
+          <div class="core-inner">
+            <div class="core-symbol">N</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="core-controls">
+
+        <button class="control-button active" data-mode="stable">
+          STABLE
+        </button>
+
+        <button class="control-button" data-mode="power">
+          POWER
+        </button>
+
+        <button class="control-button" data-mode="surge">
+          SURGE
+        </button>
+
+      </div>
+
+      <div class="voice-status">
+        <div class="voice-bars" id="voiceBars">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <span id="voiceText">NEXA READY</span>
+      </div>
+
+    </section>
+
+    <!-- RIGHT PANEL -->
+    <aside class="panel right-panel">
+
+      <div class="panel-title">
+        <span>MODULES</span>
+        <span class="panel-indicator"></span>
+      </div>
+
+      <button class="module-card" data-module="weather">
+        <div class="module-icon">◉</div>
+        <div>
+          <strong>WEATHER</strong>
+          <small>Atmospheric module</small>
+        </div>
+        <span class="module-arrow">›</span>
+      </button>
+
+      <button class="module-card" data-module="camera">
+        <div class="module-icon">◌</div>
+        <div>
+          <strong>CAMERA HUD</strong>
+          <small>Visual interface</small>
+        </div>
+        <span class="module-arrow">›</span>
+      </button>
+
+      <button class="module-card" data-module="theme">
+        <div class="module-icon">✦</div>
+        <div>
+          <strong>THEME LOCK</strong>
+          <small>Interface protection</small>
+        </div>
+        <span class="module-arrow">›</span>
+      </button>
+
+      <button class="module-card" data-module="repulsor">
+        <div class="module-icon">◈</div>
+        <div>
+          <strong>REPULSOR</strong>
+          <small>Energy module</small>
+        </div>
+        <span class="module-arrow">›</span>
+      </button>
+
+      <div class="hologram-panel">
+
+        <div class="hologram-title">HOLOGRAPHIC DISPLAY</div>
+
+        <div class="hologram">
+          <div class="holo-head"></div>
+          <div class="holo-face"></div>
+          <div class="holo-neck"></div>
+          <div class="holo-grid"></div>
+        </div>
+
+        <div class="holo-status">
+          <span></span>
+          RENDERING
+        </div>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- BOTTOM LOG -->
+  <section class="log-panel">
+
+    <div class="log-header">
+      <span>SYSTEM LOG</span>
+      <span id="clock">00:00:00</span>
+    </div>
+
+    <div class="log-content" id="logContent">
+      <div><span>[BOOT]</span> Initializing NEXA Core Interface...</div>
+      <div><span>[CORE]</span> Calibrating Arc Reactor Core...</div>
+      <div><span>[POWER]</span> Loading Repulsor Diagnostics...</div>
+      <div><span>[HOLO]</span> Spinning Up Holographic Renderer...</div>
+      <div><span>[LINK]</span> Establishing Satellite Uplink...</div>
+      <div><span>[AI]</span> Neural Net Synchronized.</div>
+      <div><span>[OK]</span> All Systems Nominal. NEXA Online.</div>
+    </div>
+
+  </section>
+
+  <!-- CHAT / COMMAND BAR -->
+  <section class="command-area">
+
+    <div class="command-box">
+      <span class="command-prefix">NEXA</span>
+
+      <input
+        id="commandInput"
+        type="text"
+        autocomplete="off"
+        placeholder="Enter visual command..."
+      >
+
+      <button id="sendButton">➤</button>
+    </div>
+
+    <div class="quick-actions">
+      <button data-command="SYSTEM STATUS">SYSTEM</button>
+      <button data-command="SCAN">SCAN</button>
+      <button data-command="DIAGNOSTICS">DIAGNOSTICS</button>
+      <button data-command="ACTIVATE">ACTIVATE</button>
+    </div>
+
+  </section>
+
+  <!-- MENU -->
+  <div class="menu-overlay" id="menuOverlay">
+
+    <div class="menu-window">
+
+      <button class="close-menu" id="closeMenu">×</button>
+
+      <div class="menu-title">NEXA CONTROL</div>
+
+      <button class="menu-item" data-command="SYSTEM STATUS">
+        SYSTEM STATUS
+      </button>
+
+      <button class="menu-item" data-command="FULL SCAN">
+        FULL SYSTEM SCAN
+      </button>
+
+      <button class="menu-item" data-command="DIAGNOSTICS">
+        RUN DIAGNOSTICS
+      </button>
+
+      <button class="menu-item" data-command="POWER">
+        POWER MODE
+      </button>
+
+      <button class="menu-item" data-command="STANDBY">
+        STANDBY
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
